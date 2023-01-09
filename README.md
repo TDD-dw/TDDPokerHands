@@ -1,3 +1,13 @@
+# Setup
+- [Mob](https://github.com/remotemobprogramming/mob)
+  - run `curcl -sL install.mob.sh | sudo sh`
+- mob commands
+  - `mob-start [branch name]` Person opening the session runs 
+  - `mob timer 5` sets a timer for number of minutes until notification to switch
+  - `mob next` when current driver turn is over 
+  - `mob start 5`next driver starts turn and timer
+  - `mob done` when session is complete run 
+
 # TDDPokerHands
 
 A poker deck contains 52 cards - each card has a suit which is one of clubs, diamonds, hearts, or spades (denoted C, D, H, and S in the input data).
