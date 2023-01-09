@@ -1,6 +1,6 @@
 # Setup
 - [Mob](https://github.com/remotemobprogramming/mob)
-  - run `curcl -sL install.mob.sh | sudo sh`
+  - run `curl -sL install.mob.sh | sudo sh`
 - mob commands
   - `mob-start [branch name]` Person opening the session runs 
   - `mob timer 5` sets a timer for number of minutes until notification to switch
