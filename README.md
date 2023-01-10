@@ -7,6 +7,11 @@
   - `mob next` when current driver turn is over 
   - `mob start 5`next driver starts turn and timer
   - `mob done` when session is complete run 
+-Repo
+  -clone using SSH
+  -`npm install`
+  -`npm test` to ensure that the test are working
+
 
 # TDDPokerHands
 
