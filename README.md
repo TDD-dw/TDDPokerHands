@@ -1,4 +1,6 @@
-# Setup
+# TDD Kata with Poker Hands in JavaScript
+
+## Setup
 - [Mob](https://github.com/remotemobprogramming/mob)
   - run `curl -sL install.mob.sh | sudo sh`
 - mob commands
@@ -13,7 +15,7 @@
   -`npm test` to ensure that the test are working
 
 
-# TDDPokerHands
+## TDDPokerHands
 
 A poker deck contains 52 cards - each card has a suit which is one of clubs, diamonds, hearts, or spades (denoted C, D, H, and S in the input data).
 
@@ -64,3 +66,8 @@ Output: Black wins - high card: 9
 
 Input: Black: 2H 3D 5S 9C KD White: 2D 3H 5C 9S KH
 Output: Tie
+
+## Alternative Languages
+
+The same kata presented in Kotlin is at
+https://github.com/binkley/kotlin-poker-hand-kata.
