@@ -16,9 +16,9 @@ function compareHands(black, white) {
 function readHand(hand) {
   let readHand = hand.split(' ').map((newCard) => {
     {
-      newCard[0] = newCard[1];
+      newCard[0]: newCard[1]
     }
   });
 }
 
-module.exports = { compareHands };
+module.exports = { compareHands, readHand };
