@@ -14,11 +14,16 @@ function compareHands(black, white) {
 }
 
 function readHand(hand) {
-//  let readHand = hand.split(' ').map((newCard) => {
-//    {
-//      newCard[0]: newCard[1]
-//    }
-//  });
+
+   let handValues = hand.split(' ')
+   let handValueObjects = handValues.map( newCard => {
+     const cardObject = {
+       [newCard[0]] : newCard[1]
+     }
+     return cardObject
+   })
+  return handValueObjects
+
 }
 
 module.exports = { compareHands, readHand };
