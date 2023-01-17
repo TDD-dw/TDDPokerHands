@@ -26,4 +26,9 @@ function readHand(hand) {
 
 }
 
+function sortHand(hand) {
+
+    return hand
+}
+
 module.exports = { compareHands, readHand };

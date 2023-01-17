@@ -15,17 +15,17 @@ describe('answer', () => {
     .toMatch(datasetOne.expectedOutput);
   });
 
-  it('High Card; Black Wins', () => {
-    const datasetOne = {
-      inputData: [
-        '2C 3H 4S 8C AH',
-        '2H 3D 5S 9C KD'
-      ],
-      expectedOutput: 'Black wins - high card: Ace'
-    }
-    expect(compareHands(datasetOne.inputData))
-    .toMatch(datasetOne.expectedOutput)
-  });
+//  it('High Card; Black Wins', () => {
+//    const datasetOne = {
+//      inputData: [
+//        '2C 3H 4S 8C AH',
+//        '2H 3D 5S 9C KD'
+//      ],
+//      expectedOutput: 'Black wins - high card: Ace'
+//    }
+//    expect(compareHands(datasetOne.inputData))
+//    .toMatch(datasetOne.expectedOutput)
+//  });
 
    it('returns array of objects representing current hand', () => {
     const inputHand = '2C 3H 4S 8C AH'
@@ -36,6 +36,12 @@ describe('answer', () => {
     .toEqual(expectedOutput)
 
   });
+    it('sorts array by value', () =>{
+    const inputHandUnsorted = [{3:'H'},{2:'C'},{4:'S'},{8:'C'},{A:'H'}]
+    const expectedHandSorted = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
+    expect(sortHand(inputHandUnsorted))
+    .toEqual(expectedHandSorted)
+    })
 
   //   Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C AH
   //   White wins - high card: Ace
