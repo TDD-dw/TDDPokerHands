@@ -22,27 +22,63 @@ let sortCards = (a, b) => {
   return -1
 };
 
-function getCardValue(card){
+function getCardValue(card) {
   let cardValue = card.slice(0, card.length - 1)
   return faceCardValues[cardValue] ?? parseInt(cardValue)
 }
 
-function answer(blackHand, whiteHand) {
-  let blackCards = blackHand.split(' ');
-  let whiteCards = whiteHand.split(' ');
+
+
+function evaluateHand(hand){
+const sortedCards = hand.sort(sortCards)
+
+sortedCards.slice(0, 4).map((card, index) => {
+  if (getCardValue(card) === getCardValue(sortedCards[index + 1])) {
+    return {
+      handType: "pair",
+      handValue: 1000 + getCardValue(card),
+      highCards: []
+    }
+  }
+})
+  return {
+    handType: "high card",
+    handValue: 0,
+    highCards: sortedCards
+  }
+}
+
+function answer(player1Hand, player2Hand) {
+  let player1Cards = player1Hand.split(' ');
+  let player1Evaluated = evaluateHand(player1Cards)
+  let player2Cards = player2Hand.split(' ');
+  let player2Evaluated = evaluateHand(player2Cards)
+  let hasPair = false;
+  let player2HasPair = false;
+  
+  
+  const sortedPlayer2Cards = player2Cards.sort(sortCards)
 
   
 
-  const sortedBlackCards = blackCards.sort(sortCards)
-  const sortedWhiteCards = whiteCards.sort(sortCards)
+  sortedPlayer2Cards.slice(0, 4).map((card, index) => {
+    if (getCardValue(card) === getCardValue(sortedPlayer2Cards[index + 1])) {
+      player2HasPair = true;
+    }
+  })
 
-  // sortedBlackCards.map( x => {if (getCardValue(x) === getCardValue(x+1)){}})  check for pair
+     
+  if (hasPair) {
+    return 'Player 1 wins - pair';
+  }
+  if (player2HasPair) {
+    return 'Player 2 wins - pair';
+  }
 
-
-  if (getCardValue(sortedBlackCards[4]) > getCardValue(sortedWhiteCards[4])) {
-    return  `Black wins - high card: ${sortedBlackCards[4].slice(0, sortedBlackCards[4].length - 1)}`;
+  if (getCardValue(sortedPlayer1Cards[4]) > getCardValue(sortedPlayer2Cards[4])) {
+    return `Player 1 wins - high card: ${sortedPlayer1Cards[4].slice(0, sortedPlayer1Cards[4].length - 1)}`;
   } else {
-    return  `White wins - high card: ${sortedWhiteCards[4].slice(0, sortedWhiteCards[4].length - 1)}`;
+    return `Player 2 wins - high card: ${sortedPlayer2Cards[4].slice(0, sortedPlayer2Cards[4].length - 1)}`;
   }
 }
 
