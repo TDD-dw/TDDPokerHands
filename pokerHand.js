@@ -27,6 +27,8 @@ function readHand(hand) {
 }
 
 function sortHand(hand) {
+    // sort the hand dictionary by key
+    hand.sort()
 
     return hand
 }
