@@ -27,3 +27,41 @@
 ## What to keep doing?
 
 - Keep expressing unfamiliarity with a syntax or concept! And then pull up docs.
+
+# Day 3, round 1 - group member names: Shan Li, Mark Sinclair, Kondal Ajjarapu, Robert Sullivan, Devon Wigle
+
+## How does this feel?
+
+- Smoother
+- a good learning experience
+- feels good to write code again
+
+## What to do differently?
+
+- Update the readme (facilitators)
+- little talk about implementation strategy at the beginning
+- Define our goals
+## What to keep doing?
+
+- Helping each other along the way
+- mob program is great
+- Keep to the timer
+
+# Day 3, round 2 - group member names: Shan Li, Mark Sinclair, Kondal Ajjarapu, Robert Sullivan, Devon Wigle
+
+## How does this feel?
+
+- About the same
+- Bad about losing code
+- Knew what we were doing this time
+
+## What to do differently?
+
+- make sure mob next is done before mob start
+- don't do pre-mature optimization
+- 5 minutes felt short, try 6 or 7
+
+## What to keep doing?
+
+- little strategy discussion at the beginning of round, that is 5 minutes, but not part of someone's coding turn
+- debate best way to write/refactor code
