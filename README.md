@@ -1,6 +1,15 @@
 # TDD Kata with Poker Hands in JavaScript
 
 ## Setup
+Please aim to do all of the setup before joining the session. This will allow us to minimize interruptions and focus on writing code. If you are stuck on something, reach out to the facilitators and we can help you offline.
+
+### Github repo access
+- [Set up SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) for connecting to Github
+  - Verify it is working
+- Ask one of the owners of this repo to invite you as a contributor with push access
+  - Accept the invite
+
+### Install Mob.sh
 - [Mob](https://github.com/remotemobprogramming/mob)
   - run `curl -sL install.mob.sh | sudo sh`
   - alternatively you can run `brew install remotemobprogramming/brew/mob`
@@ -10,10 +19,11 @@
   - `mob next` when current driver turn is over 
   - `mob start 5`next driver starts turn and timer
   - `mob done` when session is complete run 
--Repo
-  -clone using SSH
-  -`npm install`
-  -`npm test` to ensure that the test are working
+  
+### Local project setup
+- clone using SSH
+- `npm install`
+- `npm test` to ensure that the test are working
 
 
 ## TDDPokerHands
