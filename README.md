@@ -1,7 +1,7 @@
 # TDD Kata with Poker Hands in JavaScript
 
 ## Setup
-Please aim to do all of the setup before joining the session. This will allow us to minimize interruptions and focus on writing code. If you are stuck on something, reach out to the facilitators and we can help you offline.
+Please do all of the technical setup before joining the session. This will allow us to minimize interruptions and focus on writing code. If you are stuck on something, reach out to the facilitators and we can help you offline.
 
 ### Github repo access
 - [Set up SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) for connecting to Github
