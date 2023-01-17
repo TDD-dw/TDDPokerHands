@@ -38,8 +38,8 @@ describe('answer', () => {
 
 
     it('sorts array by value', () =>{
-        const inputHandUnsorted = [{4:'S'},{8:'C'},{3:'H'},{2:'C'},{A:'H'}]
-        const expectedHandSorted = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
+        const inputHandUnsorted = [{num:4, suite:'S'},{num:8, suite:'C'},{num:3, suite :'H'},{num:2, suite:'C'},{num :14, suite:'H'}]
+        const expectedHandSorted = [{num:2, suite:'C'},{num:3, suite:'H'},{num:4, suite:'S'},{num:8, suite:'C'},{num:14, suite:'H'}]
 
         expect(sortHand(inputHandUnsorted))
         .toEqual(expectedHandSorted)

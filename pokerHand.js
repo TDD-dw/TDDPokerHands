@@ -25,11 +25,9 @@ function readHand(hand) {
   return handValueObjects
 
 }
-
+// TODO create method change A,J,Q,K to respective number value
 function sortHand(hands) {
-    // sort the hand dictionary by key
-   const handValues =  hands.flatMap(hand => Object.keys(hand))
-   const sortedHandValues = handValues.sort()
+    const sortedHandValues = hands.sort((a,b) => (a.num > b.num ? 1:-1))
     return sortedHandValues
 }
 
