@@ -26,11 +26,11 @@ function readHand(hand) {
 
 }
 
-function sortHand(hand) {
+function sortHand(hands) {
     // sort the hand dictionary by key
-    hand.sort()
-
-    return hand
+   const handValues =  hands.flatMap(hand => Object.keys(hand))
+   const sortedHandValues = handValues.sort()
+    return sortedHandValues
 }
 
-module.exports = { compareHands, readHand };
+module.exports = { compareHands, readHand, sortHand };

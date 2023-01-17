@@ -1,6 +1,6 @@
 'use strict';
 
-const{compareHands, readHand} = require('./pokerHand.js');
+const{compareHands, readHand, sortHand} = require('./pokerHand.js');
 
 describe('answer', () => {
   it('High Card; White Wins', () => {
@@ -29,18 +29,20 @@ describe('answer', () => {
 
    it('returns array of objects representing current hand', () => {
     const inputHand = '2C 3H 4S 8C AH'
-
     const expectedOutput = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
 
     expect(readHand(inputHand))
     .toEqual(expectedOutput)
 
   });
+
+
     it('sorts array by value', () =>{
-    const inputHandUnsorted = [{3:'H'},{2:'C'},{4:'S'},{8:'C'},{A:'H'}]
-    const expectedHandSorted = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
-    expect(sortHand(inputHandUnsorted))
-    .toEqual(expectedHandSorted)
+        const inputHandUnsorted = [{4:'S'},{8:'C'},{3:'H'},{2:'C'},{A:'H'}]
+        const expectedHandSorted = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
+
+        expect(sortHand(inputHandUnsorted))
+        .toEqual(expectedHandSorted)
     })
 
   //   Black: 2H 3D 5S 9C KD White: 2C 3H 4S 8C AH
