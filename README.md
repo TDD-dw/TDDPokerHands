@@ -9,19 +9,30 @@ Please do all of the technical setup before joining the session. This will allow
 - Ask one of the owners of this repo to invite you as a contributor with push access
   - Accept the invite
 
+## Ensemble (mobbing) workflow
 ### Install Mob.sh
+Mob.sh takes most of the committing, pushing, and pulling and condenses it to one command. This allows the mob to flow smoothly from one driver to the next. It has timer, turn suggestion and audio check functionalities.  
 - [Mob](https://github.com/remotemobprogramming/mob)
   - run `curl -sL install.mob.sh | sudo sh`
   - alternatively you can run `brew install remotemobprogramming/brew/mob`
-- mob commands
+  - run `mob moo` to check install and audio
+
+### Mob commands
   - `mob start` Person opening the session runs this in the branch
-  - `mob timer 5` sets a timer for number of minutes until notification to switch
-  - `mob next` when current driver turn is over 
-  - `mob start 5`next driver starts turn and timer
+    - It creates an ensemble branch off of the current working branch or does a checkout to the ensemble branch
+  - `mob timer 5` sets a timer for number of minutes (5) until notification to switch
+  - `mob next` when current driver turn is over (SAVE FIRST!)
+    - Makes a commit and pushes to the ensemble branch
+  - `mob start 5`next driver starts turn and timer for 5 minutes
   - `mob done` when session is complete run 
+    - Makes a commit, squashes all commits, pushes, and then merges back to the original working branch
+
+### After the mob
+  - The person who runs `mob done` will need to do a commit and push on the original group branch. This makes sure that all of the ensemble's work is available to the next group.
   
-### Local project setup
+## Local project setup
 - clone using SSH
+- Use your favorite IDE
 - `npm install`
 - `npm test` to ensure that the test are working
 
