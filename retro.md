@@ -65,3 +65,22 @@
 
 - little strategy discussion at the beginning of round, that is 5 minutes, but not part of someone's coding turn
 - debate best way to write/refactor code
+
+# Day 4, 1/19 , round 1 - group member names: Shan Li, Mark Sinclair, Kondal Ajjarapu, Paul Rinaldi, Devon Wigle
+
+## How does this feel?
+-learned things 
+-getting closer to the final solution
+-discussing topics without getting stuck
+-prioritized better
+-worked bottom up, able to focus on functionality on a smaller scope
+
+
+## What to do differently?
+-check on setup like github cred, ide before mobbing 
+
+
+## What to keep doing?
+-keep using 5 min. timer 
+-keep expressing different ideas 
+-pseudo code = helpful when mobbing 

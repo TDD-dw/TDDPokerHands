@@ -7,7 +7,21 @@ function rankingHands(handA, handB) {
   let sortedBlack = sortHand(black);
   let sortedWhite = sortHand(white);
 
-  return highCardRanker(sortedBlack, sortedWhite);
+  // get pairs of each hand after sort
+  // if both are empty
+  //    do high card ranker
+  // else
+  //    return the better pair hand
+  // better
+
+  const blackPairs = findAllPairs(sortedBlack);
+  const whitePairs = findAllPairs(sortedWhite);
+
+  if (blackPairs.length === 0 && whitePairs.length === 0) {
+    return highCardRanker(sortedBlack, sortedWhite);
+  } else {
+    return pairRanker(blackPairs, whitePairs);
+  }
 }
 
 function highCardRanker(sortedBlack, sortedWhite) {
@@ -23,11 +37,21 @@ function highCardRanker(sortedBlack, sortedWhite) {
       return "Tie";
     }
 
+    // pop card off hand
     return highCardRanker(
       sortedBlack.slice(1, sortedBlack.length - 1),
       sortedWhite.slice(1, sortedWhite.length - 1)
     );
   }
+}
+
+function pairRanker(blackPairs, whitePairs) {
+  if (blackPairs.length > whitePairs.length) {
+    return `Black wins - pair: [${blackPairs}]`
+  } else if (blackPairs.length <whitePairs.length) {
+    return `White wins - pair: [${whitePairs}]`
+  }
+
 }
 
 function sortHand(hand) {
@@ -41,8 +65,31 @@ function sortHand(hand) {
   return hand;
 }
 
+function findAllPairs(sortedHand) {
+  let pairValues = [];
+
+  let frequencies = {};
+  for (let card of sortedHand) {
+    const cardRank = getCardRank(card);
+
+    if (cardRank in frequencies) {
+      frequencies[cardRank] += 1;
+    } else {
+      frequencies[cardRank] = 1;
+    }
+  }
+
+  for (const key in frequencies) {
+    if (frequencies[key] === 2) {
+      pairValues.push(key);
+    }
+  }
+
+  return pairValues;
+}
+
 function getCardValue(card) {
-  const trimmedCard = card.slice(0, -1);
+  const trimmedCard = getCardRank(card);
   const cardValues = {
     2: 2,
     3: 3,
@@ -64,7 +111,7 @@ function getCardValue(card) {
 // function getHighestCard(hand)
 
 function getCardName(card) {
-  const cardKey = card.slice(0, card.length - 1);
+  const cardKey = getCardRank(card);
   const cardNames = {
     Q: "Queen",
     K: "King",
@@ -75,4 +122,14 @@ function getCardName(card) {
   return parseInt(cardKey) ? cardKey : cardNames[cardKey];
 }
 
-module.exports = { rankingHands, sortHand, getCardValue, getCardName };
+function getCardRank(card) {
+  return card.slice(0, -1);
+}
+
+module.exports = {
+  rankingHands,
+  sortHand,
+  getCardValue,
+  getCardName,
+  findAllPairs,
+};

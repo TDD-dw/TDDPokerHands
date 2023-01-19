@@ -5,6 +5,7 @@ const {
   sortHand,
   getCardValue,
   getCardName,
+  findAllPairs,
 } = require("./pokerHand");
 
 describe("rankingHands", () => {
@@ -29,6 +30,42 @@ describe("rankingHands", () => {
     const handB = "2C 3H 4C 9H 10H";
 
     expect(rankingHands(handA, handB)).toEqual("Black wins - high card: 5");
+  });
+  it("pair beats highcard", () => {
+    const pairHand = "2H 2D 5S 6C 4D";
+    const highcardHard = "AC 3H 4C 9H 10H";
+
+    expect(rankingHands(pairHand, highcardHard)).toEqual(
+      "Black wins - pair: [2]"
+    );
+  });
+  it("pair beats highcard", () => {
+    const highcardHard = "AC 3H 4C 9H 10H";
+    const pairHand = "3H 3D 5S 6C 4D";
+
+    expect(rankingHands(highcardHard, pairHand)).toEqual(
+      "White wins - pair: [3]"
+    );
+  });
+  it("2 hands with same pair: high card wins", () => {
+    const blackHighCard = "2H 3D 5S 10C 10D";
+    const white = "2C 3H 4C 10H 10C";
+
+    expect(rankingHands(blackHighCard, white)).toEqual(
+      "Black wins - high card: 5"
+    );
+  });
+});
+
+describe("Pair", () => {
+  it("finds a pair", () => {
+    const handA = ["AH", "QH", "3D", "AS", "QC"];
+    expect(findAllPairs(handA)).toEqual(["A", "Q"]);
+  });
+  it("returns empty array of pairs", () => {
+    const hand = ["2C", "3H", "4C", "9H", "10H"];
+
+    expect(findAllPairs(hand)).toEqual([]);
   });
 });
 
