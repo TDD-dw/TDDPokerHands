@@ -25,10 +25,25 @@ function readHand(hand) {
   return handValueObjects
 
 }
-// TODO create method change A,J,Q,K to respective number value
+function convertFaceCards(hands){
+    const faceValues = {J : 11, Q : 12, K : 13, A : 14}
+    var convertedHand = []
+    for (let card in hands) {
+        if (card in Object.keys(faceValues)) {
+            convertedHand += card
+            convertedHand.num = faceValues[card.num]
+            convertedHand.suite = card.suite
+
+        } else {
+            convertedHand += card;
+        }
+    }
+    return convertedHand
+}
+
 function sortHand(hands) {
     const sortedHandValues = hands.sort((a,b) => (a.num > b.num ? 1:-1))
     return sortedHandValues
 }
 
-module.exports = { compareHands, readHand, sortHand };
+module.exports = { compareHands, readHand, convertFaceCards, sortHand };

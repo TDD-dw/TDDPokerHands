@@ -1,6 +1,6 @@
 'use strict';
 
-const{compareHands, readHand, sortHand} = require('./pokerHand.js');
+const{compareHands, readHand, convertFaceCards, sortHand} = require('./pokerHand.js');
 
 describe('answer', () => {
   it('High Card; White Wins', () => {
@@ -36,6 +36,12 @@ describe('answer', () => {
 
   });
 
+  it('returns numerical value associated with face cards and aces', () =>{
+    const inputHandUnconverted = [{num:4, suite:'S'},{num:8, suite:'C'},{num:3, suite :'H'},{num:2, suite:'C'},{num : 'A', suite:'H'}]
+    const expectedHandConverted = [{num:4, suite:'S'},{num:8, suite:'C'},{num:3, suite :'H'},{num:2, suite:'C'},{num :14, suite:'H'}]
+
+    expect(convertFaceCards(inputHandUnconverted)).toEqual(expectedHandConverted)
+  });
 
     it('sorts array by value', () =>{
         const inputHandUnsorted = [{num:4, suite:'S'},{num:8, suite:'C'},{num:3, suite :'H'},{num:2, suite:'C'},{num :14, suite:'H'}]
