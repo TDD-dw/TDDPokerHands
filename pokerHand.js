@@ -32,8 +32,7 @@ function convertFaceCards(hands){
     var convertedHand = []
     let faceValuesKeys = Object.keys(faceValues)
 
-    hands.forEach((card) =>
-        convertedHand.push(card)
+    hands.forEach((card) => {convertedHand.push(card)})
 //        if (faceValuesKeys.includes(card.num)) {
 //            convertedHand.push(card)
 //            card.num = faceValues[card.num]
