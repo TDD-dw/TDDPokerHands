@@ -1,14 +1,32 @@
-# Setup
+# TDD Kata with Poker Hands in JavaScript
+
+## Setup
+Please do all of the technical setup before joining the session. This will allow us to minimize interruptions and focus on writing code. If you are stuck on something, reach out to the facilitators and we can help you offline.
+
+### Github repo access
+- [Set up SSH](https://docs.github.com/en/authentication/connecting-to-github-with-ssh) for connecting to Github
+  - Verify it is working
+- Ask one of the owners of this repo to invite you as a contributor with push access
+  - Accept the invite
+
+### Install Mob.sh
 - [Mob](https://github.com/remotemobprogramming/mob)
   - run `curl -sL install.mob.sh | sudo sh`
+  - alternatively you can run `brew install remotemobprogramming/brew/mob`
 - mob commands
-  - `sh mobbracnch.sh [branch name]` Person opening the session runs 
+  - `mob start` Person opening the session runs this in the branch
   - `mob timer 5` sets a timer for number of minutes until notification to switch
   - `mob next` when current driver turn is over 
   - `mob start 5`next driver starts turn and timer
   - `mob done` when session is complete run 
+  
+### Local project setup
+- clone using SSH
+- `npm install`
+- `npm test` to ensure that the test are working
 
-# TDDPokerHands
+
+## TDDPokerHands
 
 A poker deck contains 52 cards - each card has a suit which is one of clubs, diamonds, hearts, or spades (denoted C, D, H, and S in the input data).
 
@@ -59,3 +77,8 @@ Output: Black wins - high card: 9
 
 Input: Black: 2H 3D 5S 9C KD White: 2D 3H 5C 9S KH
 Output: Tie
+
+## Alternative Languages
+
+The same kata presented in Kotlin is at
+https://github.com/binkley/kotlin-poker-hand-kata.
