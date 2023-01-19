@@ -15,21 +15,18 @@ describe('answer', () => {
     .toMatch(datasetOne.expectedOutput);
   });
 
-//  it('High Card; Black Wins', () => {
-//    const datasetOne = {
-//      inputData: [
-//        '2C 3H 4S 8C AH',
-//        '2H 3D 5S 9C KD'
-//      ],
-//      expectedOutput: 'Black wins - high card: Ace'
-//    }
-//    expect(compareHands(datasetOne.inputData))
-//    .toMatch(datasetOne.expectedOutput)
-//  });
+  it('High Card; Black Wins', () => {
+
+      let black = '2C 3H 4S 8C AH'
+      let white = '2H 3D 5S 9C KD'
+      let expectedOutput = 'Black wins - high card: Ace'
+    expect(compareHands(black, white))
+    .toEqual(expectedOutput)
+  });
 
   it('returns array of objects representing current hand', () => {
     const inputHand = '2C 3H 4S 8C AH'
-    const expectedOutput = [{ num: 2, suite: 'C' }, { num: 3, suite: 'H' }, { num: 4, suite: 'S' }, { num: 8, suite: 'C' }, { num: 'A', suite: 'H' }]
+    const expectedOutput = [{ num: "2", suite: 'C' }, { num: "3", suite: 'H' }, { num: "4", suite: 'S' }, { num: "8", suite: 'C' }, { num: 'A', suite: 'H' }]
 
     expect(readHand(inputHand))
     .toEqual(expectedOutput)

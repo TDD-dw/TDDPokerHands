@@ -9,6 +9,8 @@ function compareHands(black, white) {
   // getting highest value for each hand
   // comparing the values
   // output winner
+  let readBlack = sortHand(convertFaceCards(readHand(black)))
+  let readWhite = readHand(white)
 
   return 'White wins - high card: Ace';
 }
