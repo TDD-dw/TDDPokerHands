@@ -25,20 +25,23 @@ function readHand(hand) {
   return handValueObjects
 
 }
+
+// [{num:4, suite:'S'},{num:8, suite:'C'},{num:3, suite :'H'},{num:2, suite:'C'},{num : 'A', suite:'H'}]
 function convertFaceCards(hands){
     const faceValues = {J : 11, Q : 12, K : 13, A : 14}
     var convertedHand = []
     let faceValuesKeys = Object.keys(faceValues)
 
-    for (let card in hands) {
-        if (faceValuesKeys.includes(card.num)) {
-            console.log(card)
-            convertedHand.push(card)
-            card.num = faceValues[card.num]
-        } else {
-            convertedHand.push(card)
-        }
-    }
+    hands.forEach((card) =>
+        convertedHand.push(card)
+//        if (faceValuesKeys.includes(card.num)) {
+//            convertedHand.push(card)
+//            card.num = faceValues[card.num]
+//        } else {
+//            convertedHand.push(card)
+//        }
+
+
     return convertedHand
 }
 
