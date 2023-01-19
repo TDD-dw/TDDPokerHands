@@ -28,14 +28,15 @@ function readHand(hand) {
 function convertFaceCards(hands){
     const faceValues = {J : 11, Q : 12, K : 13, A : 14}
     var convertedHand = []
-    for (let card in hands) {
-        if (card in Object.keys(faceValues)) {
-            convertedHand += card
-            convertedHand.num = faceValues[card.num]
-            convertedHand.suite = card.suite
+    let faceValuesKeys = Object.keys(faceValues)
 
+    for (let card in hands) {
+        if (faceValuesKeys.includes(card.num)) {
+            console.log(card)
+            convertedHand.push(card)
+            card.num = faceValues[card.num]
         } else {
-            convertedHand += card;
+            convertedHand.push(card)
         }
     }
     return convertedHand
