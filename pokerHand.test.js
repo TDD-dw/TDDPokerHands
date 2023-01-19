@@ -27,9 +27,9 @@ describe('answer', () => {
 //    .toMatch(datasetOne.expectedOutput)
 //  });
 
-   it('returns array of objects representing current hand', () => {
+  it('returns array of objects representing current hand', () => {
     const inputHand = '2C 3H 4S 8C AH'
-    const expectedOutput = [{2:'C'},{3:'H'},{4:'S'},{8:'C'},{A:'H'}]
+    const expectedOutput = [{ num: 2, suite: 'C' }, { num: 3, suite: 'H' }, { num: 4, suite: 'S' }, { num: 8, suite: 'C' }, { num: 'A', suite: 'H' }]
 
     expect(readHand(inputHand))
     .toEqual(expectedOutput)
