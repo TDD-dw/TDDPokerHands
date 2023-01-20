@@ -1,4 +1,6 @@
 fileignoreconfig:
 - filename: package-lock.json
   checksum: 3d9ac1c6a15c1a5a99b41bbd43eb7c802933b5910e15b301de1b5e67fcb6b97d
+- filename: pokerHand.js
+  checksum: fb435402d50ae9071119bb4c696cdc0699d0b58eed2bc955e91b8415fd6b7747
 version: "1.0"
